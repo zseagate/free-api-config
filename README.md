@@ -63,8 +63,13 @@ uniboshi/kimi-k3-abliterated-v1:free
 
 ## 接入 OpenCode
 
+### Numes
 参考 `numes-opencode.jsonc`，把其中的 `numes` 段合并进 `~/.config/opencode/opencode.jsonc`。
 Key 通过环境变量引用 `{env:NUMES_API_KEY}`，无需在配置里写明文。
+
+### Claudemix
+参考 `claudemix-opencode.jsonc`，把其中的 `claudemix` 段合并进 `~/.config/opencode/opencode.jsonc`。
+Key 通过环境变量引用 `{env:CLAUDEMIX_API_KEY}`，无需在配置里写明文。
 
 ## 其他 OpenAI 兼容服务
 

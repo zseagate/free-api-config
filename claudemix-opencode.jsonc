@@ -1,0 +1,15 @@
+// OpenCode provider 配置示例 — claudemix (合并进 ~/.config/opencode/opencode.jsonc 的 "provider" 段)
+// Key 使用环境变量引用 {env:CLAUDEMIX_API_KEY}, 不写明文
+{
+  "claudemix": {
+    "name": "claudemix",
+    "npm": "@ai-sdk/openai-compatible",
+    "options": {
+      "baseURL": "https://www.claudemix.com/v1",
+      "apiKey": "{env:CLAUDEMIX_API_KEY}"
+    },
+    "models": {
+      "gpt-5.6-luna": { "name": "gpt-5.6-luna" }
+    }
+  }
+}
