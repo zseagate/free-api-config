@@ -56,7 +56,7 @@ usage() {
   echo "选项:"
   echo "  --key KEY            指定 API Key(优先级最高)"
   echo "  --key-file FILE      从文件读取 Key(第一行)"
-  echo "  --provider NAME      从 OpenCode auth.json 读取该 provider 的 Key (numes|sensenova|deepseek|claudemix...)"
+  echo "  --provider NAME      从 OpenCode auth.json 读取该 provider 的 Key (numes|sensenova|deepseek...)"
   echo "  --base-url URL       覆盖 API Base URL (默认 $BASE_URL)"
   echo "  --model ID           指定要检测的模型 ID, 可重复"
   echo "  --all                检测全部免费模型, 并列出 Numes 当前可用模型概况"
