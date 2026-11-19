@@ -72,6 +72,11 @@ Key 通过环境变量引用 `{env:NUMES_API_KEY}`，无需在配置里写明文
 > variant（缓存在 `~/.local/state/opencode/model.json`），它会在 TUI 会话中覆盖配置——按 `Ctrl+T`
 > 把 variant 选为 `high`，或清除该文件里对应模型的 variant 项。
 
+> 排障：若报 `provider response was invalid` 或 `Provider response headers timed out after 300000ms`
+> （AI SDK `ProviderHeaderTimeoutError`，timeout 300000ms），表示 OpenCode 等待 Numes 上游响应超时/响应无效。
+> 当前免费档容量耗尽时网关会挂起返回无响应，OpenCode 会因此报此类错误。先用 `./api-check.sh --watch`
+> 确认免费档是否恢复，恢复后重启 OpenCode 重试。
+
 ## 其他 OpenAI 兼容服务
 
 本检测脚本也适用于任意 OpenAI 兼容 API：
