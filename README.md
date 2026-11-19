@@ -66,6 +66,12 @@ uniboshi/kimi-k3-abliterated-v1:free
 参考 `numes-opencode.jsonc`，把其中的 `numes` 段合并进 `~/.config/opencode/opencode.jsonc`。
 Key 通过环境变量引用 `{env:NUMES_API_KEY}`，无需在配置里写明文。
 
+> 排障：若报 `reasoning.effort is not supported by any endpoint for this model`，是因为 OpenCode
+> 默认发 `reasoning.effort="medium"`，而 Numes 免费端点普遍不支持。示例里已为每个模型设置
+> `options.reasoningEffort="high"`（`high` 是唯一被全部免费端点支持的 effort）。若 TUI 里选过
+> variant（缓存在 `~/.local/state/opencode/model.json`），它会在 TUI 会话中覆盖配置——按 `Ctrl+T`
+> 把 variant 选为 `high`，或清除该文件里对应模型的 variant 项。
+
 ## 其他 OpenAI 兼容服务
 
 本检测脚本也适用于任意 OpenAI 兼容 API：
