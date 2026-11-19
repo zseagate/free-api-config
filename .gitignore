@@ -1,0 +1,11 @@
+# 敏感文件: 绝不提交
+.env
+*.key
+auth.json
+
+# 备份
+*.bak.*
+*.bak
+
+# 系统
+.DS_Store

@@ -1,0 +1,23 @@
+// OpenCode provider 配置示例 — 合并进 ~/.config/opencode/opencode.jsonc 的 "provider" 段
+// Key 使用环境变量引用 {env:NUMES_API_KEY}, 不写明文 (环境变量由 .env / shell 提供)
+{
+  "numes": {
+    "name": "numes",
+    "npm": "@ai-sdk/openai-compatible",
+    "options": {
+      "baseURL": "https://api.numes.ai/api/v1",
+      "apiKey": "{env:NUMES_API_KEY}"
+    },
+    "models": {
+      "z-ai/glm-5.3-flash:free": { "name": "glm-5.3-flash (free)" },
+      "z-ai/glm-5.3:free": { "name": "glm-5.3 (free)" },
+      "deepseek/deepseek-v4.1-flash:free": { "name": "deepseek-v4.1-flash (free)" },
+      "moonshotai/kimi-k3.1-pro:free": { "name": "kimi-k3.1-pro (free)" },
+      "nvidia/nemotron-3-ultra-550b-a55b:free": { "name": "nemotron-3-ultra (free)" },
+      "dealignai/glm-5.3-flash-uncensored-fp8:free": { "name": "glm-5.3-flash uncensored (free)" },
+      "dealignai/glm-5.3-uncensored-fp8:free": { "name": "glm-5.3 uncensored (free)" },
+      "dealignai/deepseek-v4.1-flash-uncensored-fp8:free": { "name": "deepseek-v4.1-flash uncensored (free)" },
+      "uniboshi/kimi-k3-abliterated-v1:free": { "name": "kimi-k3 abliterated (free)" }
+    }
+  }
+}
