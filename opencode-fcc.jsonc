@@ -1,0 +1,29 @@
+// OpenCode provider 配置示例 — free-claude-code (FCC 本地反代)
+// 合并进 ~/.config/opencode/opencode.jsonc 的 "provider" 段
+// FCC 需先安装并运行: fcc-server (监听 http://127.0.0.1:8082/v1)
+// 在 FCC Admin UI 配置 upstream providers (NVIDIA NIM / OpenRouter / Groq 等)
+{
+  "fcc": {
+    "name": "fcc",
+    "npm": "@ai-sdk/openai-compatible",
+    "options": {
+      "baseURL": "http://127.0.0.1:8082/v1",
+      "apiKey": "{env:NUMES_API_KEY}"
+    },
+    "models": {
+      "nvidia/nemotron-3-ultra-550b-a55b:free": {
+        "name": "Nemotron 3 Ultra (NVIDIA NIM, free)",
+        "options": { "reasoningEffort": "high" }
+      },
+      "nvidia_nim/nvidia/nemotron-3-ultra-550b-a55b": {
+        "name": "Nemotron 3 Ultra via NIM (free)"
+      },
+      "open_router/openrouter/auto": {
+        "name": "OpenRouter Auto (free)"
+      },
+      "groq/llama-3.3-70b-versatile": {
+        "name": "Llama 3.3 70B via Groq (free)"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// OpenCode provider 配置示例 — Groq (高速免费推理)
+// 合并进 ~/.config/opencode/opencode.jsonc 的 "provider" 段
+// API Key: 在 https://console.groq.com/keys 获取，环境变量引用 {env:GROQ_API_KEY}
+// 特点: 极速推理 (LPU)，免费额度大，适合低延迟场景
+{
+  "groq": {
+    "name": "groq",
+    "npm": "@ai-sdk/openai-compatible",
+    "options": {
+      "baseURL": "https://api.groq.com/openai/v1",
+      "apiKey": "{env:GROQ_API_KEY}"
+    },
+    "models": {
+      "llama-3.3-70b-versatile": {
+        "name": "Llama 3.3 70B Versatile (free)"
+      },
+      "llama-3.1-8b-instant": {
+        "name": "Llama 3.1 8B Instant (free)"
+      },
+      "mixtral-8x7b-32768": {
+        "name": "Mixtral 8x7B (free)"
+      },
+      "gemma2-9b-it": {
+        "name": "Gemma 2 9B IT (free)"
+      }
+    }
+  }
+}

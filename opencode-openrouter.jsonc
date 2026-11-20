@@ -1,0 +1,30 @@
+// OpenCode provider 配置示例 — OpenRouter (免费模型聚合)
+// 合并进 ~/.config/opencode/opencode.jsonc 的 "provider" 段
+// API Key: 在 https://openrouter.ai/keys 获取，环境变量引用 {env:OPENROUTER_API_KEY}
+{
+  "openrouter": {
+    "name": "openrouter",
+    "npm": "@ai-sdk/openai-compatible",
+    "options": {
+      "baseURL": "https://openrouter.ai/api/v1",
+      "apiKey": "{env:OPENROUTER_API_KEY}"
+    },
+    "models": {
+      "openrouter/auto": {
+        "name": "OpenRouter Auto (免费最优)"
+      },
+      "meta-llama/llama-3.3-70b-instruct:free": {
+        "name": "Llama 3.3 70B Instruct (free)"
+      },
+      "google/gemini-2.0-flash-exp:free": {
+        "name": "Gemini 2.0 Flash Exp (free)"
+      },
+      "nvidia/nemotron-3-ultra:free": {
+        "name": "Nemotron 3 Ultra (free)"
+      },
+      "qwen/qwen-2.5-72b-instruct:free": {
+        "name": "Qwen 2.5 72B (free)"
+      }
+    }
+  }
+}
