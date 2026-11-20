@@ -72,10 +72,11 @@ Key 通过环境变量引用 `{env:NUMES_API_KEY}`，无需在配置里写明文
 > variant（缓存在 `~/.local/state/opencode/model.json`），它会在 TUI 会话中覆盖配置——按 `Ctrl+T`
 > 把 variant 选为 `high`，或清除该文件里对应模型的 variant 项。
 
-> 排障：若报 `provider response was invalid` 或 `Provider response headers timed out after 300000ms`
-> （AI SDK `ProviderHeaderTimeoutError`，timeout 300000ms），表示 OpenCode 等待 Numes 上游响应超时/响应无效。
-> 当前免费档容量耗尽时网关会挂起返回无响应，OpenCode 会因此报此类错误。先用 `./api-check.sh --watch`
-> 确认免费档是否恢复，恢复后重启 OpenCode 重试。
+> 排障：当前 OpenCode 的 numes provider 指向本地反代 `http://127.0.0.1:8082/v1`（free-claude-code / fcc-server），
+> 该服务再转发到 Numes（`https://api.numes.ai/api/v1`）。若 OpenCode 报
+> `provider response was invalid` / `no provider is available` / 超时，往往是该反代链路或 Numes 后端异常导致。
+> 可通过 `curl http://127.0.0.1:8082/v1/models` 探测反代状态；Numes 免费档恢复后（`api-check.sh` 全 OK），
+> 反代与 OpenCode 即可恢复。
 
 ## 其他 OpenAI 兼容服务
 
